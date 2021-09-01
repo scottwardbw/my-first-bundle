@@ -1,0 +1,44 @@
+{
+    "name": "@Vizia/bundle-frogs",
+    "version": "1.0.0",
+    "description": "Frogs – [DESCRIPTION]",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "npx @vizia/app-emulator -u",
+        "lint": "eslint .",
+        "test": "ava --verbose --color",
+        "ci": "npm run lint && npm run test",
+        "build": "npx @vizia/bob -t full"
+    },
+    "ava": {
+        "files": [
+            "test/src/**/*.test.js"
+        ]
+    },
+    "publishConfig": {
+        "registry": "https://registry.brandwatch.npme.io"
+    },
+    "repository": "github:Vizia/frogs",
+    "homepage": "https://github.com/Vizia/frogs#readme",
+    "bugs": {
+        "url": "https://github.com/Vizia/frogs/issues"
+    },
+    "license": "UNLICENSED",
+    "dependencies": {
+        "@vizia/bundle": "^2",
+        "@vizia/transformify": "^1.0.6",
+        "axios": "^0.18.0"
+    },
+    "devDependencies": {
+        "@vizia/eslint-config": "^2",
+        "ava": "^0",
+        "eslint": "^5"
+    },
+    "vizia": {
+        "browser": "src/index.js",
+        "bundle": "src/lib/create-bundle.js",
+        "manifests": {
+            "frogs": "public/manifest.json"
+        }
+    }
+}
